@@ -1,5 +1,5 @@
 class Obrera {
-	var property sueldo = 0
+	var property sueldo = 200
 	var property derechos = 10
 	var property difusion = 0
 	var property experiencia = 0
@@ -10,8 +10,11 @@ class Obrera {
 	
 	method manifestarse(aumento){
 		derechos += 10
-		 difusion += 10
-		 sueldo += aumento
+		difusion += 10
+		sueldo += aumento
+	}
+	method comoVesElFuturo() {
+		return if (sueldo > 100) "genial" else "todo mal"
 	}
 }
 
@@ -22,6 +25,9 @@ class Clero {
 	method predicar(){
 		seguidores += 5
 		impunidad += 5
+	}
+	method comoVesElFuturo(){
+		return "excelente"
 	}
 	 
 }

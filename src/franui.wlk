@@ -6,7 +6,10 @@ class Rico{
 		
 		personas.forEach({unaPersona => unaPersona.trabajar()})
 			
-	}	
+	}
+	method dineroDePersonas(){
+		return personas.sum({p=>p.dinero()})
+	}
 	method masRico(){
 		
 		personas.forEach({unaPersonas => unaPersonas.pagarImpuesto(self)})
@@ -16,38 +19,47 @@ class Rico{
 		
 		personas.add(new Empleado())
 	}
+	method comoVesElFuturo() {
+		return personas.size()
+	}
+	method ganarDinero(monto){
+		dinero += monto
+	}
 }
 
 class Empleado{
 	var property dinero	= 0
 	//var property impuesto = 10
-	var property ciudadDondeVive = ciudad
 	method trabajar(){
 		dinero+=20
 
 		
 	}
 	method pagarImpuesto(patron){
-		dinero -= ciudadDondeVive.impuesto()
-		patron.ganarDinero()
+		var impuesto =ciudad.impuesto() 
+		dinero -= impuesto
+		patron.ganarDinero(impuesto)
+	}
+	method comoVesElFuturo() {
+		return "mal"
 	}
 }
 
 class Opositor{
-	method revuelta(ciudad){
+	method revuelta(){
 		ciudad.impuesto(0)
 	}
 }
 
 object ciudad{
-	var property ricos =[]
-	var property opositor
+	var property ricos = []
+	var property opositor = new Opositor()
 	var property impuesto = 10
 	
 	method accionOpositora(){
-		opositor.revuelta(self)
+		opositor.revuelta()
 	}
-	method cantDineroPersonas()= ricos.personas().sum({unaPersona => unaPersona.dinero()})
+	method cantDineroPersonas()= ricos.sum({unRico=> unRico.dineroDePersonas()})
 	method cantDineroRicos()= ricos.sum({unRico => unRico.dinero()})
 	method siempreGananLosRicos() = self.cantDineroRicos() > self.cantDineroPersonas()
 	

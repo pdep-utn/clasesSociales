@@ -1,11 +1,14 @@
 import mundo.*
+import franui.*
+import frutillasConCrema.*
 
 describe "el mundo el peligro" {
 fixture { 
     mundoImaginario.aumentarPoblacion( new Personaje() )
-    mundoImaginario.aumentarPoblacion( new Personaje() )
-    mundoImaginario.aumentarPoblacion( new Personaje() )
-    mundoImaginario.aumentarPoblacion( new Personaje() )
+    mundoImaginario.aumentarPoblacion( new Rico() )
+    mundoImaginario.aumentarPoblacion( new Empleado() )
+    mundoImaginario.aumentarPoblacion( new Clero() )
+    mundoImaginario.aumentarPoblacion( new Obrera() )
 }
 
 test "prueba de clase" {
