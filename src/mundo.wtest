@@ -1,0 +1,14 @@
+import mundo.*
+
+describe "el mundo el peligro" {
+fixture { 
+    mundoImaginario.aumentarPoblacion( new Personaje() )
+    mundoImaginario.aumentarPoblacion( new Personaje() )
+    mundoImaginario.aumentarPoblacion( new Personaje() )
+    mundoImaginario.aumentarPoblacion( new Personaje() )
+}
+
+test "prueba de clase" {
+  assert.that(mundoImaginario.tieneFuturo())
+  }
+}
