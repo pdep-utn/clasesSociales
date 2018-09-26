@@ -1,4 +1,4 @@
-import clasesSociales.*
+import frutillasConCrema.*
 
 describe "grupo de test"{
 	

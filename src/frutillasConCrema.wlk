@@ -1,5 +1,5 @@
 class Obrera {
-	var property sueldo = 200
+	var property sueldo = 0
 	var property derechos = 10
 	var property difusion = 0
 	var property experiencia = 0
@@ -14,7 +14,7 @@ class Obrera {
 		sueldo += aumento
 	}
 	method comoVesElFuturo() {
-		return if (sueldo > 100) "genial" else "todo mal"
+		return if (sueldo > 100) "genial" else "muy mal"
 	}
 }
 
