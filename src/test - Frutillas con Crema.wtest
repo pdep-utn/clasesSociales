@@ -1,0 +1,35 @@
+import clasesSociales.*
+
+describe "grupo de test"{
+	
+	var juana = new Obrera()
+	var jorge = new Clero()
+	
+	test "aumentan los valores de las propiedades de juana" {
+		
+		juana.manifestarse(100)
+		assert.that(juana.sueldo() == 100)
+		assert.that(juana.derechos() == 20)
+		assert.that(juana.difusion() == 10)
+
+	}
+	
+	test "la experiencia de juana aumenta 10"{
+		
+		juana.trabajar()
+		assert.that(juana.experiencia() == 10)
+	}
+	
+	test "los seguidores de jorge no son 1000"{
+		
+		jorge.predicar()
+		assert.notThat(jorge.seguidores() == 1000)
+	}
+	
+	test "la impunidad de jorge no es 100"{
+		
+		jorge.predicar()
+		assert.notThat(jorge.impunidad() == 100)
+	}
+	
+}
