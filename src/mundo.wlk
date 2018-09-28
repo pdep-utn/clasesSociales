@@ -1,5 +1,7 @@
+
 object mundoImaginario {
   var habitantes = []
+  var lider = new Personaje()
   
   method aumentarPoblacion(habitante) {
 	habitantes.add(habitante)
